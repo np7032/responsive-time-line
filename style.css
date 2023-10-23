@@ -1,0 +1,155 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.6rem;
+}
+
+.container {
+  max-width: 130rem;
+  margin: 0 auto;
+  padding: 0 3rem;
+}
+
+.job-wrapper {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.job-wrapper h1 {
+  font-size: 3.5rem;
+}
+
+.job-wrapper h1 i {
+  margin-right: 0.5rem;
+}
+
+.job-wrapper .job-container {
+  min-width: 80rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.job-wrapper .job-container .job-box {
+  width: 40rem;
+  position: relative;
+  padding: 2rem 5rem;
+}
+
+.job-wrapper .job-container .job-box::after {
+  content: "";
+  position: absolute;
+  right: -0.2rem;
+  top: 0;
+  width: 0.4rem;
+  height: 100%;
+  background-color: black;
+  z-index: -6;
+}
+
+.job-wrapper .job-container .job-box:nth-child(even)::after {
+  left: -0.2rem;
+}
+
+.job-wrapper .job-container .job-box:nth-child(odd) {
+  align-self: flex-start;
+}
+
+.job-wrapper .job-container .job-box:nth-child(even) {
+  align-self: flex-end;
+  margin-left: -2rem;
+}
+
+.job-wrapper .job-container .job-box i {
+  position: absolute;
+  top: 15%;
+  right: -6.5%;
+  font-size: 2rem;
+  background-color: white;
+  width: 5rem;
+  height: 5rem;
+  border-radius: 50%;
+  border: 0.5rem solid black;
+  text-align: center;
+  line-height: 4rem;
+}
+
+.job-wrapper .job-container .job-box:nth-child(even) i {
+  left: -6.5%;
+}
+
+.job-wrapper .job-container .job-box .box {
+  border: 0.4rem solid black;
+  padding: 0 1rem;
+  border-radius: 1rem;
+  position: relative;
+}
+
+.job-wrapper .job-container .job-box .box .arrow {
+  position: absolute;
+  content: "";
+  width: 3rem;
+  height: 1.8rem;
+  background-color: black;
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+  top: 15%;
+  right: -9%;
+  transform: rotate(90deg);
+}
+
+.job-wrapper .job-container .job-box:nth-child(even) .box .arrow {
+  left: -9%;
+  transform: rotate(270deg);
+}
+
+@media only screen and (max-width: 900px) {
+  html {
+    font-size: 56%;
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  html {
+    font-size: 50%;
+  }
+
+  .job-wrapper .job-container {
+    padding-right: 5rem;
+  }
+  .job-wrapper .job-container .job-box:nth-child(odd) {
+    align-self: center;
+  }
+
+  .job-wrapper .job-container .job-box:nth-child(even) {
+    align-self: center;
+    margin-left: 0;
+  }
+
+  .job-wrapper .job-container .job-box:nth-child(even)::after {
+    left: 99.5%;
+  }
+
+  .job-wrapper .job-container .job-box:nth-child(even) .box .arrow {
+    left: 99%;
+    transform: rotate(90deg);
+  }
+
+  .job-wrapper .job-container .job-box:nth-child(even) i {
+    left: 93.5%;
+  }
+}
